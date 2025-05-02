@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Book</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .form-group input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input[type="text"]:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btn-group input[type="submit"],
+    .btn-group input[type="reset"] {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-group input[type="submit"] {
+      background-color: #28a745;
+      color: #fff;
+    }
+
+    .btn-group input[type="submit"]:hover {
+      background-color: #218838;
+    }
+
+    .btn-group input[type="reset"] {
+      background-color: #dc3545;
+      color: #fff;
+    }
+
+    .btn-group input[type="reset"]:hover {
+      background-color: #c82333;
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .link a {
+      text-decoration: none;
+      color: #007BFF;
+      font-size: 14px;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Add a New Book</h2>
+    <form action="/add" method="post">
+      <div class="form-group">
+        <label for="book_name">Name of Book</label>
+        <input type="text" name="book_name" id="book_name" value="" />
+      </div>
+
+      <div class="form-group">
+        <label for="author">Author Name</label>
+        <input type="text" name="author" id="author" value="" />
+      </div>
+
+      <div class="form-group">
+        <label for="publisher">Publisher</label>
+        <input type="text" name="publisher" id="publisher" value="" />
+      </div>
+
+      <div class="btn-group">
+        <input type="submit" name="submit" value="Insert" />
+        <input type="reset" name="reset" value="Cancel" />
+      </div>
+
+      <div class="link">
+        <a href="register.ejs">Go to Register</a>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book List</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 10px;
+      text-align: left;
+    }
+    a, button {
+      padding: 6px 10px;
+      margin: 2px;
+      text-decoration: none;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .delete {
+      background: #140608;
+    }
+  </style>
+</head>
+<body>
+  <h2>Books List</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Book Name</th>
+      <th>Author</th>
+      <th>Publisher</th>
+      <th>Actions</th>
+    </tr>
+    <% books.forEach(function(book) { %>
+      <tr>
+        <td><%= book.id %></td>
+        <td><%= book.book_name %></td>
+        <td><%= book.author %></td>
+        <td><%= book.publisher %></td>
+        <td>
+          <a href="/edit/<%= book.id %>">Edit</a>
+          <form action="/delete/<%= book.id %>" method="get" style="display:inline;">
+            <button type="submit" class="delete">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+
+  <br>
+  <a href="/">Add New Book</a>
+</body>
+</html>
